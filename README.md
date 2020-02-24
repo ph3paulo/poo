@@ -1,5 +1,5 @@
 
-![](sua_foto.jpg)
+![](Paulo-Henrique.jpg)
 
 # Repositório para Disciplina
 
