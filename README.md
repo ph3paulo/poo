@@ -6,8 +6,12 @@
 Ok
 
 
-## Trabalho 01
+## Trabalho 01 Pincel
 
-- O que você fez
-    - Nada Ainda
+- O que eu fez
+    - um classe pincel
+    - que pode recarregar a tinta
+    - escrever
+    - destampar o pincel
+    - e tampar o pincel
 
