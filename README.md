@@ -8,7 +8,7 @@ Ok
 
 ## Trabalho 01 Pincel
 
-- O que eu fez
+- O que eu fiz
     - um classe pincel
     - que pode recarregar a tinta
     - escrever
