@@ -1,14 +1,13 @@
 #include <iostream>
+#include <sstream>
 using namespace std;
 
-struct Pincel
-{
+struct Pincel{
 	bool tampa = true;
 	int nTinta = 10;
     int maxTinta = 100;
 
-    bool recarregar()
-    {
+    bool recarregar(){
         if (this->nTinta < this->maxTinta)
         {
             this->nTinta += 1;
@@ -19,8 +18,7 @@ struct Pincel
         return false;
     }
 
-    void ecrever()
-    {
+    void escrever(){
 		if(this->nTinta > 0)
 		{
 			this->nTinta --;
@@ -32,8 +30,7 @@ struct Pincel
 		}
     }
 
-    void tampar()
-    {
+    void tampar(){
         if(this->tampa == false)
         {
             this->tampa = true;
@@ -46,8 +43,7 @@ struct Pincel
         
     }
 
-    void destampar()
-    {
+    void destampar(){
         if(this->tampa == true)
         {
             this->tampa = false;
@@ -62,15 +58,37 @@ struct Pincel
     }
 };
 
-int main()
-{
+int main(){
     Pincel * pincel = new Pincel();
-    pincel->recarregar();
-    pincel->recarregar();
-    cout << "vc ainda tem essa quantidade: " << pincel->nTinta << " de tinta" << "\n";
+    while(true){
+        string line;
+        getline(cin, line);
+        stringstream ss(line);
+        string cmd;
+        ss >> cmd;
+        if(cmd == "end"){
+            break;
+        }else if(cmd == "recarregar"){
+            pincel->recarregar();
+        }else if(cmd == "escrever"){
+            pincel->escrever();
+        }else if(cmd == "destampar"){
+            pincel->destampar();
+        }else if (cmd == "tampar"){
+            pincel->tampar();
+        }
+        else{
+            cout << "comando invalido\n";
+        }
+        cout << "\n";
+        cout << "voce tem essa quantidade: " << pincel->nTinta << " de tinta" << "\n";
+        if(pincel->tampa == true){
+            cout << "seu Pincel esta tampado" << "\n";
+        }
+        else{
+            cout << "Seu pincel esta destampado" << "\n";
+        }
+        cout << "======================" << "\n";
+    }
     return 0;
 }
-
-
-
-
