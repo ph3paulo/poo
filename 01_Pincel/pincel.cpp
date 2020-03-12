@@ -19,14 +19,18 @@ struct Pincel{
     }
 
     void escrever(){
-		if(this->nTinta > 0)
-		{
-			this->nTinta --;
-			cout << "você escreveu ^^" << "\n";
-		}
-		else if(this->nTinta <= 0)
-		{
-			cout << "você não tem tinta o suficiente" << "\n";
+    	if(this->tampa == false){
+			if(this->nTinta > 0)
+			{
+				this->nTinta --;
+				cout << "você escreveu ^^" << "\n";
+			}
+			else if(this->nTinta <= 0)
+			{
+				cout << ">>você não tem tinta o suficiente" << "\n";
+			}
+		}else{
+			cout << ">>caneta tampada não pode escrever" << "\n";
 		}
     }
 
@@ -34,11 +38,11 @@ struct Pincel{
         if(this->tampa == false)
         {
             this->tampa = true;
-            cout << "Sua caneta foi tampada" << "\n";
+            cout << ">>Sua caneta foi tampada" << "\n";
         }
         else
         {
-            cout << "Sua caneta ja esta destampada" << "\n";
+            cout << ">>Sua caneta ja esta destampada" << "\n";
         }
         
     }
@@ -47,11 +51,11 @@ struct Pincel{
         if(this->tampa == true)
         {
             this->tampa = false;
-            cout << "Sua caneta foi destampada" << "\n";
+            cout << ">>Sua caneta foi destampada" << "\n";
         }
         else
         {
-            cout << "Sua caneta ja esta destampada" << "\n";
+            cout << ">>Sua caneta ja esta destampada" << "\n";
         }
         
 
