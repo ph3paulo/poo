@@ -48,7 +48,9 @@ struct Lapiseira{
             if(ponta->estado_ponta == true){
                 if(n > ponta->quantidade_ponta)
                 {
-                cout << ">>voce não tem grafite suficiente" << "\n";
+                    int n_novo = n - ponta->quantidade_ponta;
+                    ponta->quantidade_ponta = 0;
+                cout << ">>Voce não tinha grafite o suficiente faltou: " << n_novo << "\n";
                 }
                 else if(ponta->quantidade_ponta > 0)
                 {
@@ -100,7 +102,7 @@ struct Lapiseira{
             cout << ">>sem ponta" << "\n";
         }else{
             cout << ">>voce tem essa quantidade: " << ponta->quantidade_ponta << " de grafite" << "\n";
-            if(ponta->quantidade_ponta == true){
+            if(ponta->estado_ponta == true){
                 cout << ">>sua ponta esta para fora" << "\n";
             }
             else{
@@ -137,12 +139,10 @@ int main(){
         }else if(cmd == "retira_ponta"){
             lapiseira.retira_ponta();
         }else{
-            cout << "comando invalido\n";
+            cout << ">>comando invalido\n";
         }
         cout << "==========================" << "\n";
 
     }
     return 0;
 }
-
-
